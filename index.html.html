@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vergadercode naar Google Meet</title>
+<style>
+  /* Stijlen voor de hele pagina */
+  body {
+    font-family: Arial, sans-serif; /* Gebruik het lettertype Arial of een generiek sans-serif lettertype */
+    background-color: #f7f7f7; /* Lichtgrijze achtergrondkleur */
+    color: #333; /* Donkere tekstkleur */
+    text-align: center; /* Centreer de tekst in het midden van de pagina */
+    margin: 0; /* Verwijder standaardmarges van de pagina */
+    padding: 0; /* Verwijder standaardopvulling van de pagina */
+  }
+
+  /* Stijlen voor koppen */
+  h1 {
+    color: #007bff; /* Blauwe tekstkleur voor koppen */
+  }
+
+  /* Stijlen voor alinea's */
+  p {
+    font-size: 18px; /* Grootte van het lettertype voor alinea's */
+    margin-bottom: 20px; /* Ruimte onder alinea's */
+  }
+
+  /* Stijlen voor het tekstvak */
+  input[type="text"] {
+    padding: 10px; /* Binnenopvulling van het tekstvak */
+    font-size: 16px; /* Grootte van het lettertype voor het tekstvak */
+    border: 2px solid #007bff; /* Blauwe rand rondom het tekstvak */
+    border-radius: 5px; /* Afgeronde hoeken voor het tekstvak */
+    width: 300px; /* Breedte van het tekstvak */
+  }
+
+  /* Stijlen voor de knop */
+  button {
+    background-color: #28a745; /* Groene achtergrondkleur voor de knop */
+    color: #fff; /* Witte tekstkleur voor de knop */
+    border: none; /* Geen rand om de knop */
+    padding: 10px 20px; /* Binnenopvulling van de knop */
+    font-size: 16px; /* Grootte van het lettertype voor de knop */
+    cursor: pointer; /* Verander de cursor naar een handje wanneer je over de knop beweegt */
+    border-radius: 5px; /* Afgeronde hoeken voor de knop */
+    transition: background-color 0.3s ease; /* Soepele overgang voor achtergrondkleurveranderingen */
+  }
+
+  /* Stijlen voor de knop wanneer er overheen wordt bewogen */
+  button:hover {
+    background-color: #218838; /* Donkerdere groene kleur wanneer er overheen wordt bewogen */
+  }
+</style>
+</head>
+<body>
+<h1>Vul uw vergadercode in</h1>
+<p>Voer hieronder uw vergadercode in en klik op de knop om naar de Google Meet te gaan.</p>
+<form id="meetForm" onsubmit="redirectToMeet(); return false;">
+  <input type="text" id="meetingCode" name="meetingCode" placeholder="Vergadercode">
+  <button type="submit">Ga naar Google Meet</button>
+</form>
+<script>
+  function redirectToMeet() {
+    var meetingCode = document.getElementById("meetingCode").value;
+    window.location.href = "https://meet.google.com/" + meetingCode;
+  }
+</script>
+</body>
+</html>
